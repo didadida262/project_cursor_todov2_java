@@ -1,27 +1,27 @@
 # Todo Application
 
-一个功能完整的待办事项管理应用，基于 React + Spring Boot + MySQL 开发。
+A full-featured todo management application built with React + Spring Boot + MySQL.
 
-## 项目结构
+## Project Structure
 
 ```
 project_cursor_todov2_java/
-├── backend/          # Spring Boot 后端项目
+├── backend/          # Spring Boot backend project
 │   ├── src/
-│   ├── db/           # 数据库初始化脚本
+│   ├── db/           # Database initialization scripts
 │   └── pom.xml
-├── front/            # React 前端项目
+├── front/            # React frontend project
 │   ├── src/
 │   ├── public/
 │   └── package.json
-├── start.sh          # 一键启动脚本（Mac）
-├── stop.sh           # 停止脚本（Mac）
+├── start.sh          # One-click startup script (Mac)
+├── stop.sh           # Stop script (Mac)
 └── README.md
 ```
 
-## 技术栈
+## Tech Stack
 
-### 后端
+### Backend
 - Java 17+
 - Spring Boot 3.2.0
 - Spring Data JPA
@@ -29,78 +29,78 @@ project_cursor_todov2_java/
 - Lombok
 - Swagger (springdoc-openapi)
 
-### 前端
+### Frontend
 - React 18.2.0
 - Axios
 - CSS3
 
-## 环境要求
+## Requirements
 
-- Java 17 或更高版本
+- Java 17 or higher
 - Maven 3.6+
-- Node.js 16+ 和 npm
-- MySQL 5.7+ 或更高版本
+- Node.js 16+ and npm
+- MySQL 5.7+ or higher
 
-> 📖 **详细安装指南请参考 [INSTALL.md](INSTALL.md)**  
-> ☕ **Java 环境变量配置详细步骤请参考 [JAVA_SETUP.md](JAVA_SETUP.md)**  
-> 🍺 **Homebrew 安装后配置请参考 [HOMEBREW_SETUP.md](HOMEBREW_SETUP.md)**
+> 📖 **For detailed installation guide, please refer to [INSTALL.md](INSTALL.md)**  
+> ☕ **For detailed Java environment variable configuration, please refer to [JAVA_SETUP.md](JAVA_SETUP.md)**  
+> 🍺 **For Homebrew post-installation configuration, please refer to [HOMEBREW_SETUP.md](HOMEBREW_SETUP.md)**
 
-## 数据库配置
+## Database Configuration
 
-1. 确保 MySQL 服务正在运行
-2. 创建数据库（可选，应用会自动创建）：
+1. Ensure MySQL service is running
+2. Create database (optional, application will create automatically):
    ```sql
    CREATE DATABASE todoapp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
    ```
-3. 或者运行初始化脚本：
+3. Or run the initialization script:
    ```bash
    mysql -u root < backend/db/todoapp.sql
    ```
 
-数据库配置信息：
-- 地址：localhost:3306
-- 用户名：root
-- 密码：空（无密码）
-- 数据库名：todoapp
+Database configuration:
+- Address: localhost:3306
+- Username: root
+- Password: empty (no password)
+- Database name: todoapp
 
-## 快速开始
+## Quick Start
 
-### 🚀 一键启动（推荐，Mac 系统）
+### 🚀 One-Click Startup (Recommended for Mac)
 
-项目提供了便捷的一键启动脚本，自动检查环境、创建数据库并启动所有服务：
+The project provides a convenient one-click startup script that automatically checks the environment, creates the database, and starts all services:
 
 ```bash
-# 启动所有服务
+# Start all services
 ./start.sh
 
-# 停止所有服务
+# Stop all services
 ./stop.sh
 ```
 
-启动脚本会自动：
-- ✅ 检查 Java、Maven、Node.js、MySQL 环境
-- ✅ 提供友好的错误提示和安装指导
-- ✅ 尝试自动安装缺失的工具（如果使用 Homebrew）
-- ✅ 检查并启动 MySQL 服务
-- ✅ 自动创建数据库（如果不存在）
-- ✅ 编译并启动后端服务（端口 8000）
-- ✅ 安装依赖并启动前端服务（端口 3000）
-- ✅ 显示服务访问地址和日志文件位置
+The startup script will automatically:
+- ✅ Check Java, Maven, Node.js, MySQL environment
+- ✅ Provide friendly error messages and installation guidance
+- ✅ Attempt to automatically install missing tools (if using Homebrew)
+- ✅ Check and start MySQL service
+- ✅ Automatically create database (if it doesn't exist)
+- ✅ Compile and start backend service (port 8000)
+- ✅ Install dependencies and start frontend service (port 3000)
+- ✅ Display service access addresses and log file locations
 
-**注意**：
-- 首次运行可能需要几分钟时间来安装依赖和编译项目
-- 如果缺少必要的工具，脚本会显示详细的安装指导
-- 按 `Ctrl+C` 可以停止所有服务，或使用 `./stop.sh` 脚本
+**Note**:
+- First run may take a few minutes to install dependencies and compile the project
+- If required tools are missing, the script will display detailed installation instructions
+- Press `Ctrl+C` to stop all services, or use `./stop.sh` script
 
-**如果遇到环境问题，请参考 [INSTALL.md](INSTALL.md) 进行环境配置。**
+**If you encounter environment issues, please refer to [INSTALL.md](INSTALL.md) for environment configuration.**
 
 ---
 
-### 手动启动
+### Manual Startup
 
-如果需要手动启动服务，可以按照以下步骤：
+If you need to start services manually, follow these steps:
 
-#### 1. 启动后端服务
+#### 1. Start Backend Service
 
 ```bash
 cd backend
@@ -108,11 +108,11 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-后端服务将在 `http://localhost:8000` 启动
+Backend service will start at `http://localhost:8000`
 
-API 文档访问地址：`http://localhost:8000/swagger-ui.html`
+API documentation: `http://localhost:8000/swagger-ui.html`
 
-### 2. 启动前端服务
+#### 2. Start Frontend Service
 
 ```bash
 cd front
@@ -120,55 +120,55 @@ npm install
 npm start
 ```
 
-前端应用将在 `http://localhost:3000` 启动
+Frontend application will start at `http://localhost:3000`
 
-## 功能特性
+## Features
 
-- ✅ 添加待办事项
-- ✅ 标记完成/未完成
-- ✅ 删除单个任务
-- ✅ 过滤显示（全部/未完成/已完成）
-- ✅ 批量删除已完成任务
-- ✅ 清空所有任务
-- ✅ 中英文语言切换
-- ✅ 响应式设计
-- ✅ 现代化UI界面
+- ✅ Add todos
+- ✅ Mark complete/incomplete
+- ✅ Delete individual tasks
+- ✅ Filter display (All/Active/Completed)
+- ✅ Batch delete completed tasks
+- ✅ Clear all tasks
+- ✅ Chinese/English language switching
+- ✅ Responsive design
+- ✅ Modern UI interface
 
-## API 接口
+## API Endpoints
 
-所有 API 接口前缀：`/api/v1`
+All API endpoints prefix: `/api/v1`
 
-### 主要接口
+### Main Endpoints
 
-- `GET /api/v1/todos` - 获取待办事项列表
-- `POST /api/v1/todos` - 创建待办事项
-- `PUT /api/v1/todos/{id}` - 更新待办事项
-- `DELETE /api/v1/todos/{id}` - 删除待办事项
-- `PATCH /api/v1/todos/{id}/toggle` - 切换完成状态
-- `DELETE /api/v1/todos/completed` - 批量删除已完成项
-- `DELETE /api/v1/todos/all` - 清空所有待办事项
+- `GET /api/v1/todos` - Get todo list
+- `POST /api/v1/todos` - Create todo
+- `PUT /api/v1/todos/{id}` - Update todo
+- `DELETE /api/v1/todos/{id}` - Delete todo
+- `PATCH /api/v1/todos/{id}/toggle` - Toggle completion status
+- `DELETE /api/v1/todos/completed` - Batch delete completed items
+- `DELETE /api/v1/todos/all` - Clear all todos
 
-详细 API 文档请参考 `spec-req.md` 或访问 Swagger UI。
+For detailed API documentation, please refer to `spec-req.md` or visit Swagger UI.
 
-## 测试
+## Testing
 
-### 后端测试
+### Backend Testing
 
 ```bash
 cd backend
 mvn test
 ```
 
-### 前端测试
+### Frontend Testing
 
 ```bash
 cd front
 npm test
 ```
 
-## 构建部署
+## Build & Deployment
 
-### 后端构建
+### Backend Build
 
 ```bash
 cd backend
@@ -176,40 +176,40 @@ mvn clean package
 java -jar target/todoapp-backend-1.0.0.jar
 ```
 
-### 前端构建
+### Frontend Build
 
 ```bash
 cd front
 npm run build
 ```
 
-构建后的静态文件在 `front/build` 目录中。
+Built static files are in the `front/build` directory.
 
-## 开发说明
+## Development Guide
 
-### 后端开发
+### Backend Development
 
-- 主应用类：`com.todoapp.TodoApplication`
-- 实体类：`com.todoapp.entity.Todo`
-- 控制器：`com.todoapp.controller.TodoController`
-- 服务层：`com.todoapp.service.TodoService`
-- 数据访问层：`com.todoapp.repository.TodoRepository`
+- Main application class: `com.todoapp.TodoApplication`
+- Entity class: `com.todoapp.entity.Todo`
+- Controller: `com.todoapp.controller.TodoController`
+- Service layer: `com.todoapp.service.TodoService`
+- Data access layer: `com.todoapp.repository.TodoRepository`
 
-### 前端开发
+### Frontend Development
 
-- 主组件：`src/App.js`
-- 组件目录：`src/components/`
-- API 服务：`src/services/api.js`
-- 国际化：`src/utils/i18n.js`
+- Main component: `src/App.js`
+- Components directory: `src/components/`
+- API service: `src/services/api.js`
+- Internationalization: `src/utils/i18n.js`
 
-## 注意事项
+## Notes
 
-1. 确保 MySQL 服务已启动
-2. 确保数据库 `todoapp` 已创建
-3. 后端和前端需要同时运行才能正常使用
-4. 默认语言为英文
-5. 数据库密码为空，仅用于开发环境
+1. Ensure MySQL service is started
+2. Ensure database `todoapp` is created
+3. Both backend and frontend need to be running simultaneously for normal use
+4. Default language is English
+5. Database password is empty, for development environment only
 
-## 许可证
+## License
 
 ISC
